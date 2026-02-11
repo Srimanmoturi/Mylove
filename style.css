@@ -95,3 +95,84 @@ form input[type="text"] {
   border: 1px solid #ddd;
   font-size: 0.95rem;
 }
+
+/* Love page specific styles */
+.love-body {
+  background: radial-gradient(circle at top, #ff758c, #ff7eb3);
+  overflow: hidden;
+}
+
+.love-container {
+  position: relative;
+  z-index: 2;
+}
+
+.poem {
+  text-align: left;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.poem p {
+  margin: 4px 0;
+}
+
+/* Button on questions page to go to love page */
+.love-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #ff6b81;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.love-button:hover {
+  transform: scale(1.05);
+  background: #ff5070;
+}
+
+/* Floating hearts animation */
+.hearts::before,
+.hearts::after {
+  content: "❤";
+  position: fixed;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  animation: floatHearts 6s linear infinite;
+}
+
+.hearts::after {
+  left: 70%;
+  animation-duration: 8s;
+  animation-delay: 1s;
+}
+
+@keyframes floatHearts {
+  0% {
+    top: 100%;
+    left: 20%;
+    transform: translateX(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-20px) scale(1.2);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    left: 30%;
+    transform: translateX(20px) scale(1);
+    opacity: 0;
+  }
+}
+
